@@ -15,7 +15,9 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const newLocation = {
         userid: loggedInUser._id,
-        title: request.payload.title,
+        name: request.payload.name,
+        latitude: request.payload.latitude,
+        longitude: request.payload.longitude,
       };
       await db.locationStore.addLocation(newLocation);
       return h.redirect("/dashboard");
