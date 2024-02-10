@@ -1,0 +1,29 @@
+<table class="table is-fullwidth">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each playlist.tracks}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{category}}</td>
+            <td>{{description}}</td>
+            <td>{{latitude}}</td>
+            <td>{{longitude}}</td>
+            <td>
+                <a href="/location/{{../location._id}}/report/delete/{{_id}}" class="button">
+            <span class="icon is-small">
+              <i class="fas fa-trash" style="color: #fc738e;"></i>
+            </span>
+                </a>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

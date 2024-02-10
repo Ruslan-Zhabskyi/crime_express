@@ -6,20 +6,27 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "lint": "./node_modules/.bin/eslint . --ext .js"
+    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**.js -exit"
   },
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "@hapi/cookie": "^12.0.1",
+    "@hapi/hapi": "^21.3.2",
+    "@hapi/vision": "^7.0.3",
+    "dotenv": "^16.4.0",
+    "handlebars": "^4.7.8",
+    "joi": "^17.12.0",
+    "lowdb": "^7.0.1",
+    "mongoose": "^8.1.1",
+    "uuid": "^9.0.1"
+  },
   "devDependencies": {
+    "chai": "^5.0.3",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
+    "mocha": "^10.2.0",
     "prettier": "^3.2.2"
-  },
-  "dependencies": {
-    "@hapi/hapi": "^21.3.2",
-    "@hapi/vision": "^7.0.3",
-    "handlebars": "^4.7.8"
   }
 }

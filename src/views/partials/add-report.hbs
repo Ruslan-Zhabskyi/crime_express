@@ -1,0 +1,23 @@
+<form class="box" action="/location/{{location._id}}/addreport" method="POST">
+  <label>Enter Report Details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Name" name="name" />
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Category" name="category" />
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Description" name="description" />
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Latitude" name="latitude" />
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Longitude" name="longitude" />
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Add Report</button>
+</form>
