@@ -3,11 +3,11 @@ import Mongoose from "mongoose";
 const { Schema } = Mongoose;
 
 const reportSchema = new Schema({
-  Name: String,
-  Latitude: Number,
-  Longitude: Number,
-  Category: String,
-  Description: String,
+  name: String,
+  latitude: Number,
+  longitude: Number,
+  category: String,
+  description: String,
   locationid: {
     type: Schema.Types.ObjectId,
     ref: "Location",
