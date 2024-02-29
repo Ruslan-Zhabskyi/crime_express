@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "firstName": "newUser",
+      "lastName": "newUserLastName",
+      "email": "newUser@email.com",
+      "password": "111",
+      "_id": "33c991f8-4cc9-447b-afca-b6d7b432e2c0"
+    }
+  ],
+  "locations": [
+    {
+      "userid": "33c991f8-4cc9-447b-afca-b6d7b432e2c0",
+      "name": "Malahide",
+      "latitude": 2,
+      "longitude": 1,
+      "_id": "ae2bf829-0b38-4cba-98cb-3ae48147b810"
+    }
+  ],
+  "reports": []
+}
