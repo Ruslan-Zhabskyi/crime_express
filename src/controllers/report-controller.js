@@ -17,8 +17,10 @@ export const reportController = {
     validate: {
       payload: ReportSpec,
       options: { abortEarly: false },
-      failAction: function (request, h, error) {
-        return h.view("location-view", { title: "Add report error", errors: error.details }).takeover().code(400);
+      failAction: async function (request, h, error) {
+        const location = await db.locationStore.getLocationById(request.params.id);
+        location.reports = await db.reportStore.getReportsByLocationId(location._id);
+        return h.view("location-view", { title: "Add report error", errors: error.details, location: location }).takeover().code(400);
       },
     },
 

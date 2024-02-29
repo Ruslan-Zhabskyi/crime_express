@@ -6,8 +6,17 @@ export const dashboardController = {
     validate: {
       payload: LocationSpec,
       options: { abortEarly: false },
-      failAction: function (request, h, error) {
-        return h.view("dashboard-view", { title: "Add Location error", errors: error.details }).takeover().code(400);
+      failAction: async function (request, h, error) {
+        const loggedInUser = request.auth.credentials;
+        const locations = await db.locationStore.getUserLocations(loggedInUser._id);
+        return h
+          .view("dashboard-view", {
+            title: "Add Location error",
+            errors: error.details,
+            locations: locations,
+          })
+          .takeover()
+          .code(400);
       },
     },
 
