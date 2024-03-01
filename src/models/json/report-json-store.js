@@ -7,7 +7,7 @@ export const reportJsonStore = {
     return db.data.reports;
   },
 
-  async addReport(playlistId, report) {
+  async addReport(locationId, report) {
     await db.read();
     report._id = v4();
     report.locationid = locationId;
