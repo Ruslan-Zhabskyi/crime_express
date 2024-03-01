@@ -36,12 +36,24 @@ export const Malahide = {
 
 export const testLocations = [
   {
-    title: "",
+    name: "Night Disturbance",
+    category: "Anti Social Behavior",
+    description: "Shouting heard late at night",
+    latitude: 53.2,
+    longitude: -6.36,
   },
   {
-    title: "",
+    name: "Interference with the property",
+    category: "Property Crimes",
+    description: "Burglary",
+    latitude: 50.2,
+    longitude: -5.36,
   },
   {
-    title: "",
+    name: "Hacking",
+    category: "Cyber Crimes",
+    description: "hacked home network",
+    latitude: 53.22,
+    longitude: -6.34,
   },
 ];
