@@ -33,6 +33,12 @@ export const Wicklow = {
   longitude: -6.04944,
 };
 
+export const Kilkenny = {
+  name: "Kilkenny",
+  latitude: 52.65417,
+  longitude: -7.25222,
+};
+
 export const testLocations = [
   {
     name: "Malahide",

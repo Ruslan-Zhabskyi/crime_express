@@ -2,7 +2,7 @@ import { Location } from "./location.js";
 import { reportMongoStore } from "./report-mongo-store.js";
 
 export const locationMongoStore = {
-  async getAllReports() {
+  async getAllLocations() {
     const locations = await Location.find().lean();
     return locations;
   },
