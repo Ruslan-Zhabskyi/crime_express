@@ -20,6 +20,13 @@
       "email": "bart@simpson.com",
       "password": "secret",
       "_id": "21327872-4790-4ab2-9cbf-d9abc4005b28"
+    },
+    {
+      "firstName": "Maggie",
+      "lastName": "Simpson",
+      "email": "maggie@simpson.com",
+      "password": "secret",
+      "_id": "42b921af-aeb4-4b50-abd9-56146d7d6fd4"
     }
   ],
   "locations": [
