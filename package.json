@@ -1,22 +1,38 @@
 {
-  "name": "crime_express",
-  "version": "0.1.0",
-  "description": "A crime report application for the HDip in Computing, SETU",
-  "main": "src/server.js",
+  "name": "playtime",
+  "version": "0.8.0",
+  "description": "A Playlist application for the HDip in Computing, WIT",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
+    "dev": "./node_modules/.bin/nodemon src/server.js --ignore 'src/models/json/*.json'",
     "lint": "./node_modules/.bin/eslint . --ext .js",
-    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**.js -exit",
-    "dev": "./node_modules/.bin/nodemon  src/server.js"
+    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**/*.js -exit",
+    "testmodels": "./node_modules/mocha/bin/_mocha --ui tdd test/models/**/*.js -exit",
+    "testapi": "./node_modules/mocha/bin/_mocha --ui tdd test/api/**/*.js -exit"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wit-hdip-comp-sci-2021/playtime.git"
+  },
+  "keywords": [
+    "node",
+    "hapi"
+  ],
+  "author": "edeleastar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wit-hdip-comp-sci-2021/playtime/issues"
+  },
+  "homepage": "https://github.com/wit-hdip-comp-sci-2021/playtime#readme",
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@hapi/cookie": "^12.0.1",
     "@hapi/hapi": "^21.3.2",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
-    "dotenv": "^16.4.0",
+    "dotenv": "^16.4.1",
     "handlebars": "^4.7.8",
     "hapi-swagger": "^17.2.1",
     "joi": "^17.12.0",
@@ -26,13 +42,13 @@
   },
   "devDependencies": {
     "axios": "^1.6.7",
-    "chai": "^5.1.0",
+    "chai": "^5.0.3",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
-    "mocha": "^10.3.0",
-    "nodemon": "^3.1.0",
-    "prettier": "^3.2.2"
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.4"
   }
 }
