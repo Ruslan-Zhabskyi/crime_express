@@ -1,9 +1,11 @@
+import Inert from "@hapi/inert";
 import Vision from "@hapi/vision";
 import Hapi from "@hapi/hapi";
 import Cookie from "@hapi/cookie";
 import dotenv from "dotenv";
 import path from "path";
 import Joi from "joi";
+import HapiSwagger from "hapi-swagger";
 import { fileURLToPath } from "url";
 import Handlebars from "handlebars";
 import { webRoutes } from "./web-routes.js";
@@ -20,13 +22,31 @@ if (result.error) {
   process.exit(1);
 }
 
+const swaggerOptions = {
+  info: {
+    title: "Crime Express API",
+    version: "0.1",
+  },
+};
+
 async function init() {
   const server = Hapi.server({
     port: process.env.PORT || 3000,
   });
 
+  await server.register(Inert);
   await server.register(Vision);
   await server.register(Cookie);
+
+  await server.register([
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
+  ]);
+
   server.validator(Joi);
 
   server.views({
@@ -52,10 +72,10 @@ async function init() {
   });
   server.auth.default("session");
 
-  db.init("json");
+  db.init("mongo");
   server.route(webRoutes);
-  await server.start();
   server.route(apiRoutes);
+  await server.start();
   console.log("Server running on %s", server.info.uri);
 }
 
