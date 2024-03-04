@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node src/server.js",
     "lint": "./node_modules/.bin/eslint . --ext .js",
-    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**.js -exit"
+    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**.js -exit",
+    "dev": "./node_modules/.bin/nodemon  src/server.js"
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
@@ -29,6 +30,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "mocha": "^10.3.0",
+    "nodemon": "^3.1.0",
     "prettier": "^3.2.2"
   }
 }
