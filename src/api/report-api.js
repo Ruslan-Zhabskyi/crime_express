@@ -1,5 +1,7 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
+import { IdSpec, ReportSpec, ReportSpecPlus, ReportArraySpec } from "../models/joi-schemas.js";
+import { validationError } from "./logger.js";
 
 export const reportApi = {
   find: {
@@ -12,6 +14,10 @@ export const reportApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    response: { schema: ReportArraySpec, failAction: validationError },
+    description: "Get all reportApi",
+    notes: "Returns all reportApi",
   },
 
   findOne: {
@@ -27,6 +33,11 @@ export const reportApi = {
         return Boom.serverUnavailable("No report with this id");
       }
     },
+    tags: ["api"],
+    description: "Find a Report",
+    notes: "Returns a report",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: ReportSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -42,6 +53,11 @@ export const reportApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Create a report",
+    notes: "Returns the newly created report",
+    validate: { payload: ReportSpec },
+    response: { schema: ReportSpecPlus, failAction: validationError },
   },
 
   deleteAll: {
@@ -54,6 +70,8 @@ export const reportApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Delete all trackApi",
   },
 
   deleteOne: {
@@ -70,5 +88,8 @@ export const reportApi = {
         return Boom.serverUnavailable("No Report with this id");
       }
     },
+    tags: ["api"],
+    description: "Delete a report",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 };

@@ -21,16 +21,34 @@ export const UserSpecPlus = UserSpec.keys({
 
 export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
-export const LocationSpec = {
-  name: Joi.string().required(),
-  latitude: Joi.number().required(),
-  longitude: Joi.number().required(),
-};
+export const LocationSpec = Joi.object()
+  .keys({
+    name: Joi.string().required().example("Malahide"),
+    latitude: Joi.number().required().example("56.12"),
+    longitude: Joi.number().required().example("-6.10"),
+  })
+  .label("Location");
 
-export const ReportSpec = {
-  name: Joi.string().allow("").optional(),
-  category: Joi.string().required(),
-  description: Joi.string().allow("").optional(),
-  latitude: Joi.number().required(),
-  longitude: Joi.number().required(),
-};
+export const LocationSpecPlus = LocationSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("LocationPlus");
+
+export const LocationArraySpec = Joi.array().items(LocationSpecPlus).label("LocationArray");
+
+export const ReportSpec = Joi.object()
+  .keys({
+    name: Joi.string().allow("").optional().example("Interference with the property"),
+    category: Joi.string().required().example("Property Crimes"),
+    description: Joi.string().allow("").optional().example("Burglary"),
+    latitude: Joi.number().required().example("56.2"),
+    longitude: Joi.number().required().example("-6.03"),
+    locationid: IdSpec,
+  })
+  .label("Report");
+export const ReportSpecPlus = ReportSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("ReportPlus");
+
+export const ReportArraySpec = Joi.array().items(ReportSpecPlus).label("ReportArray");
