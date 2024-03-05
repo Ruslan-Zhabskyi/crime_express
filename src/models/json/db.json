@@ -1,22 +1,6 @@
 {
-  "users": [
-    {
-      "firstName": "Maggie",
-      "lastName": "Simpson",
-      "email": "maggie@simpson.com",
-      "password": "secret",
-      "_id": "14fc9557-015f-43cf-99b7-a6df3e728e6f"
-    }
-  ],
-  "locations": [
-    {
-      "name": "Wicklow",
-      "latitude": 52.975,
-      "longitude": -6.04944,
-      "userid": "14fc9557-015f-43cf-99b7-a6df3e728e6f",
-      "_id": "05c73d2b-d169-4b99-a55c-af91e255d29e"
-    }
-  ],
+  "users": [],
+  "locations": [],
   "reports": [
     {
       "name": "Night Disturbance",
