@@ -8,10 +8,14 @@ suite("Report API tests", () => {
   let wicklowCrimes = null;
 
   setup(async () => {
-    await crimeexpressService.deleteAllLocations();
-    await crimeexpressService.deleteAllUsers();
-    await crimeexpressService.deleteAllReports();
+    crimeexpressService.clearAuth();
     user = await crimeexpressService.createUser(maggie);
+    await crimeexpressService.authenticate(maggie);
+    await crimeexpressService.deleteAllLocations();
+    await crimeexpressService.deleteAllReports();
+    await crimeexpressService.deleteAllUsers();
+    user = await crimeexpressService.createUser(maggie);
+    await crimeexpressService.authenticate(maggie);
     Wicklow.userid = user._id;
     wicklowCrimes = await crimeexpressService.createLocation(Wicklow);
   });
