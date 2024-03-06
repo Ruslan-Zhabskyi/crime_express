@@ -5,7 +5,9 @@ import { validationError } from "./logger.js";
 
 export const reportApi = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const reports = await db.reportStore.getAllReports();
@@ -21,7 +23,9 @@ export const reportApi = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const report = await db.reportStore.getReportById(request.params.id);
@@ -41,7 +45,9 @@ export const reportApi = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const report = await db.reportStore.addReport(request.params.id, request.payload);
@@ -61,7 +67,9 @@ export const reportApi = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.reportStore.deleteAllReports();
@@ -75,7 +83,9 @@ export const reportApi = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const report = await db.reportStore.getReportById(request.params.id);

@@ -10,9 +10,13 @@ suite("Location API tests", () => {
   let user = null;
 
   setup(async () => {
+    crimeexpressService.clearAuth();
+    user = await crimeexpressService.createUser(maggie);
+    await crimeexpressService.authenticate(maggie);
     await crimeexpressService.deleteAllLocations();
     await crimeexpressService.deleteAllUsers();
     user = await crimeexpressService.createUser(maggie);
+    await crimeexpressService.authenticate(maggie);
     Wicklow.userid = user._id;
   });
 
