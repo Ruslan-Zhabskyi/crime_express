@@ -75,4 +75,23 @@ export const accountsController = {
     }
     return { isValid: true, credentials: user };
   },
+  // admin dash
+  adminDashboard: {
+    auth: { strategy: "session", scope: ["admin"] },
+    handler: async function (request, h) {
+      // Fetch all users from the database
+      const users = await db.userStore.getAllUsers();
+      // Render the admin dashboard view with the users
+      return h.view("admin-dashboard", { title: "Admin Dashboard", users });
+    },
+  },
+  removeUser: {
+    auth: { strategy: "session", scope: ["admin"] },
+    handler: async function (request, h) {
+      // Remove the user from the database
+      await db.userStore.deleteUserById(request.params.id);
+      // Redirect back to the admin dashboard
+      return h.redirect("/admin");
+    },
+  },
 };
