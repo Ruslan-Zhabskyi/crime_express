@@ -6,9 +6,11 @@ export const reportController = {
   index: {
     handler: async function (request, h) {
       const location = await db.locationStore.getLocationById(request.params.id);
+      const loggedInUser = request.auth.credentials;
       const viewData = {
         title: "Location",
         location: location,
+        user: loggedInUser,
       };
       return h.view("location-view", viewData);
     },
