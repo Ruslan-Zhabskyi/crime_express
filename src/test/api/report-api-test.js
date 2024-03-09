@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { crimeexpressService } from "./crime-express-service.js";
-import { maggie, Wicklow, testLocations, testReports, malahideReport } from "../fixtures.js";
+import { maggie, Wicklow, testLocations, testReports, malahideReport, maggieCredentials } from "../fixtures.js";
 
 suite("Report API tests", () => {
   let user = null;
@@ -10,12 +10,12 @@ suite("Report API tests", () => {
   setup(async () => {
     crimeexpressService.clearAuth();
     user = await crimeexpressService.createUser(maggie);
-    await crimeexpressService.authenticate(maggie);
+    await crimeexpressService.authenticate(maggieCredentials);
     await crimeexpressService.deleteAllLocations();
     await crimeexpressService.deleteAllReports();
     await crimeexpressService.deleteAllUsers();
     user = await crimeexpressService.createUser(maggie);
-    await crimeexpressService.authenticate(maggie);
+    await crimeexpressService.authenticate(maggieCredentials);
     Wicklow.userid = user._id;
     wicklowCrimes = await crimeexpressService.createLocation(Wicklow);
   });

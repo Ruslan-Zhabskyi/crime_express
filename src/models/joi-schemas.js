@@ -53,3 +53,10 @@ export const ReportSpecPlus = ReportSpec.keys({
 }).label("ReportPlus");
 
 export const ReportArraySpec = Joi.array().items(ReportSpecPlus).label("ReportArray");
+
+export const JwtAuth = Joi.object()
+  .keys({
+    success: Joi.boolean().example("true").required(),
+    token: Joi.string().example("eyJhbGciOiJND.g5YmJisIjoiaGYwNTNjAOhE.gCWGmY5-YigQw0DCBo").required(),
+  })
+  .label("JwtAuth");
