@@ -1,7 +1,7 @@
 import { crimeexpressService } from "./crime-express-service.js";
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
-import {maggie, maggieCredentials, testUsers} from "../fixtures.js";
+import { maggie, maggieCredentials, testUsers } from "../fixtures.js";
 
 const users = new Array(testUsers.length);
 
@@ -9,7 +9,7 @@ suite("User API tests", () => {
   setup(async () => {
     crimeexpressService.clearAuth();
     await crimeexpressService.createUser(maggie);
-    aawait crimeexpressService.authenticate(maggieCredentials);
+    await crimeexpressService.authenticate(maggieCredentials);
     await crimeexpressService.deleteAllUsers();
     for (let i = 0; i < testUsers.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
