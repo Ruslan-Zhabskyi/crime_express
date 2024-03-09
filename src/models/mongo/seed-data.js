@@ -8,6 +8,13 @@ export const seedData = {
       password: "secret",
       isAdmin: false,
     },
+    maggie: {
+      firstName: "Maggie",
+      lastName: "Simpson",
+      email: "maggie@simpson.com",
+      password: "secret",
+      isAdmin: true,
+    },
     marge: {
       firstName: "Marge",
       lastName: "Simpson",
