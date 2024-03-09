@@ -4,9 +4,10 @@
     <ul>
         {{#each users}}
             <li>
-                <p>Name: {{this.firstName}} {{this.lastName}}</p>
-                <p>Email: {{this.email}}</p>
-                <a href="/admin/users/{{this._id}}/delete">Remove</a>
+                <p>Name: {{firstName}} {{lastName}}</p>
+                <p>Email: {{email}}</p>
+                <a href="/admin/users/delete/{{_id}}">Remove</a>
+
             </li>
         {{/each}}
     </ul>

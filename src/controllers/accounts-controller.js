@@ -88,7 +88,8 @@ export const accountsController = {
   removeUser: {
     handler: async function (request, h) {
       // Remove the user from the database
-      await db.userStore.deleteUserById(request.params.id);
+      const user = await db.userStore.getUserById(request.params.id);
+      await db.userStore.deleteUserById(user._id);
       // Redirect back to the admin dashboard
       return h.redirect("/admin");
     },
