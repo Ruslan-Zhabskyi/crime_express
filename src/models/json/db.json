@@ -1,6 +1,47 @@
 {
-  "users": [],
-  "locations": [],
+  "users": [
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "_id": "0c82c64e-2f82-4fb6-87d0-ef7d2c2f8315"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "f4f9e2ee-efd1-4aa3-913c-aeba6fc2ccc2"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "d3068591-1aea-4cb0-b016-896348b25fcc"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Malahide",
+      "latitude": 53.45,
+      "longitude": -6.16,
+      "_id": "9880bedd-0c76-4be3-a9f6-aef9ec19133e"
+    },
+    {
+      "name": "Dublin",
+      "latitude": 53.33306,
+      "longitude": -6.24889,
+      "_id": "79d3e905-be33-4911-b9b3-ebbe1b15a8e2"
+    },
+    {
+      "name": "Drogheda",
+      "latitude": 53.71889,
+      "longitude": -6.34778,
+      "_id": "29572fe4-5d73-4a57-8bf8-d01af42391cb"
+    }
+  ],
   "reports": [
     {
       "name": "Night Disturbance",
@@ -8,8 +49,8 @@
       "description": "Shouting heard late at night",
       "latitude": 53.2,
       "longitude": -6.36,
-      "_id": "b0ba8bd9-65f9-4b7a-9167-249fac956282",
-      "locationid": "05c73d2b-d169-4b99-a55c-af91e255d29e"
+      "_id": "b6ed9ce8-d2e6-4e95-a37c-e0fe42d82e14",
+      "locationid": "26fd81fd-7224-447f-b71b-71fb5ed510f3"
     },
     {
       "name": "Interference with the property",
@@ -17,8 +58,8 @@
       "description": "Burglary",
       "latitude": 50.2,
       "longitude": -5.36,
-      "_id": "95684b0a-de08-4da6-864f-2f4055db9c09",
-      "locationid": "05c73d2b-d169-4b99-a55c-af91e255d29e"
+      "_id": "31ae2cab-171a-4734-ba68-af9ce3381030",
+      "locationid": "26fd81fd-7224-447f-b71b-71fb5ed510f3"
     },
     {
       "name": "Hacking",
@@ -26,8 +67,17 @@
       "description": "hacked home network",
       "latitude": 53.22,
       "longitude": -6.34,
-      "_id": "aa69daec-5d9c-4570-9475-d880c0cdf802",
-      "locationid": "05c73d2b-d169-4b99-a55c-af91e255d29e"
+      "_id": "a64666d9-e03e-4d9a-9908-1d61f13da315",
+      "locationid": "26fd81fd-7224-447f-b71b-71fb5ed510f3"
+    },
+    {
+      "name": "Late Night Disturbance",
+      "category": "Anti Social Behavior",
+      "description": "Loud music and shouting heard from the property late at night, causing disturbance to the neighbors",
+      "latitude": 53.45,
+      "longitude": -6.16,
+      "_id": "ad24768c-6e06-460a-a191-8a6fe3278b20",
+      "locationid": "ea1f5c9c-a6a2-40c0-8840-b0fbeaef272d"
     }
   ]
 }
