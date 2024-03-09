@@ -1,23 +1,32 @@
 <form class="box" action="/location/{{location._id}}/addreport" method="POST">
-  <label>Enter Report Details:</label>
-  <div class="field is-horizontal">
-    <div class="field-body">
-      <div class="field">
-        <input class="input" type="text" placeholder="Enter Name" name="name" />
-      </div>
-      <div class="field">
-        <input class="input" type="text" placeholder="Enter Category*" name="category" />
-      </div>
-      <div class="field">
-        <input class="input" type="text" placeholder="Enter Description" name="description" />
-      </div>
-      <div class="field">
-        <input class="input" type="text" placeholder="Enter Latitude*" name="latitude" />
-      </div>
-      <div class="field">
-        <input class="input" type="text" placeholder="Enter Longitude*" name="longitude" />
-      </div>
+    <label>Enter Report Details:</label>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <input class="input" type="text" placeholder="Enter Name" name="name" />
+            </div>
+            <div class="field">
+                <select class="input" name="category">
+                    <option value="">Select Category*</option>
+                    <option value="Anti Social Behavior">Anti Social Behavior</option>
+                    <option value="Domestic Crime">Domestic Crime</option>
+                    <option value="Hate Crime">Hate Crime</option>
+                    <option value="Sexual Crime">Sexual Crime</option>
+                    <option value="Theft">Theft</option>
+                    <option value="Property Crime">Property Crime</option>
+                    <option value="Violent Event">Violent Event</option>
+                </select>
+            </div>
+            <div class="field">
+                <input class="input" type="text" placeholder="Enter Description" name="description" />
+            </div>
+            <div class="field">
+                <input class="input" type="text" placeholder="Enter Latitude*" name="latitude" />
+            </div>
+            <div class="field">
+                <input class="input" type="text" placeholder="Enter Longitude*" name="longitude" />
+            </div>
+        </div>
     </div>
-  </div>
-  <button class="button is-primary">Add Report</button>
+    <button class="button is-primary">Add Report</button>
 </form>

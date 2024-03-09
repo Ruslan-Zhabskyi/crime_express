@@ -1,0 +1,14 @@
+{{> menu active="Admin"}}
+<section class="section">
+    <h1 class="title">Users</h1>
+    <ul>
+        {{#each users}}
+            <li>
+                <p>Name: {{firstName}} {{lastName}}</p>
+                <p>Email: {{email}}</p>
+                <a href="/admin/users/delete/{{_id}}">Remove</a>
+
+            </li>
+        {{/each}}
+    </ul>
+</section>
