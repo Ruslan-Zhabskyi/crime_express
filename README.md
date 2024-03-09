@@ -14,7 +14,8 @@ CE is a web application designed as a project for the Full Stack module assignme
 - Incident reporting (Add Report)
 - User management by administrators (Admin can manage users)
 
-#### How to use. Signup and login to your account. You can create locations and then report incidents. You can also upload images.
+#### How to use. 
+Signup and login to your account. You can create locations and then report incidents. You can also upload images.
 
 #### Technologies Used						 								
 - JavaScript
