@@ -1,5 +1,6 @@
 import { db } from "../models/db.js";
 import { LocationSpec } from "../models/joi-schemas.js";
+import { imageStore } from "../models/image-store.js";
 
 export const dashboardController = {
   addLocation: {

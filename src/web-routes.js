@@ -22,5 +22,7 @@ export const webRoutes = [
   { method: "GET", path: "/location/delete/{id}", config: dashboardController.deleteLocation },
   { method: "GET", path: "/location/{locationId}/report/delete/{reportId}", config: reportController.deleteReport },
 
+  { method: "POST", path: "/location/{id}/uploadimage", config: reportController.uploadImage },
+
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
 ];
