@@ -78,6 +78,11 @@ export const accountsController = {
   // admin dash
   adminDashboard: {
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      if (!loggedInUser.isAdmin) {
+        // If the user is not an admin, redirect them to a different page
+        return h.redirect("/dashboard");
+      }
       // Fetch all users from the database
       const users = await db.userStore.getAllUsers();
       // Render the admin dashboard view with the users
@@ -87,6 +92,11 @@ export const accountsController = {
 
   removeUser: {
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      if (!loggedInUser.isAdmin) {
+        // If the user is not an admin, redirect them to a different page
+        return h.redirect("/dashboard");
+      }
       // Remove the user from the database
       const user = await db.userStore.getUserById(request.params.id);
       await db.userStore.deleteUserById(user._id);
