@@ -86,7 +86,7 @@ export const accountsController = {
       // Fetch all users from the database
       const users = await db.userStore.getAllUsers();
       // Render the admin dashboard view with the users
-      return h.view("admin-view", { title: "Admin Dashboard", users });
+      return h.view("admin-view", { title: "Admin Dashboard", users, user: loggedInUser });
     },
   },
 
