@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import { crimeexpressService } from "./crime-express-service.js";
-import { decodeToken } from "../../api/jwt-utils.js";
+import { decodeToken } from "../../src/api/jwt-utils.js";
 import { maggie, maggieCredentials } from "../fixtures.js";
 
 suite("Authentication API tests", async () => {

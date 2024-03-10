@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { db } from "../../models/db.js";
+import { db } from "../../src/models/db.js";
 import { testLocations, testReports, Kilkenny, Wicklow, malahideReport, testUsers } from "../fixtures.js";
 import { assertSubset } from "../test-utils.js";
 

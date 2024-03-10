@@ -12,9 +12,15 @@ export const reportMongoStore = {
     return reports;
   },
 
+  async getAllReports() {
+    const reports = await Report.find().lean();
+    return reports;
+  },
+
   async getReportById(id) {
+    let report = null;
     if (id) {
-      const report = await Report.findOne({ _id: id }).lean();
+      report = await Report.findOne({ _id: id }).lean();
     }
     return report;
   },
@@ -23,7 +29,7 @@ export const reportMongoStore = {
     const newReport = new Report(report);
     newReport.locationid = locationId;
     const reportObj = await newReport.save();
-    return reportObj;
+    return this.getReportById(reportObj._id);
   },
 
   async deleteReport(id) {

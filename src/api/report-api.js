@@ -59,11 +59,11 @@ export const reportApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    tags: ["api"],
-    description: "Create a report",
-    notes: "Returns the newly created report",
-    validate: { payload: ReportSpec },
-    response: { schema: ReportSpecPlus, failAction: validationError },
+    // tags: ["api"],
+    // description: "Create a report",
+    // notes: "Returns the newly created report",
+    // validate: { payload: ReportSpec },
+    // response: { schema: ReportSpecPlus, failAction: validationError },
   },
 
   deleteAll: {
